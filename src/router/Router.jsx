@@ -5,6 +5,8 @@ import SubmitWork from "../pages/SubmitWork/SubmitWork";
 import NoticePage from "../pages/Noticepage/NoticePage";
 import Project from "../pages/Project/Project";
 import Thesis from "../pages/Thesis/Thesis";
+import AuthLayouts from "../layouts/AuthLayouts";
+import Login from "../pages/Authentication/Login/Login";
 
 
 export  const router = createBrowserRouter([
@@ -43,5 +45,25 @@ export  const router = createBrowserRouter([
     
     
     
-    }
+    },
+
+
+  //it is for authentication layout
+
+  {
+
+    path:'/',
+    Component:AuthLayouts,
+     children: [
+      { 
+        path:'login',
+        Component: Login, 
+      },
+    
+    
+    ]
+
+
+  }
+
 ]);
