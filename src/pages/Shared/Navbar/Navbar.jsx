@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router';
-// import logo from '../../../assets/logo.png'
+
 
 
 import Logo from '../../Shared/Logo/Logo';
@@ -15,7 +15,9 @@ const Navbar = () => {
       <li><NavLink to='/'> Home</NavLink></li>
       <li><NavLink to='/about'> AboutUs</NavLink></li>
       <li><NavLink to='/notice'> NoticePage</NavLink></li>
-
+      <li><NavLink to='/submit'> SubmitWork</NavLink></li>
+      <li><NavLink to='/project'> Project</NavLink></li>
+      <li><NavLink to='/thesis'> Thesis</NavLink></li>
       
     </>
 return (
