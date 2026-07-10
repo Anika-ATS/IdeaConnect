@@ -36,7 +36,7 @@ const NoticePage = () => {
         <div className="text-center mb-10">
           <h1 className="text-3xl md:text-4xl font-bold">Notices</h1>
           <p className="mt-2 text-gray-500">
-            All notices from admin will appear here
+            All noticees from admin will appear here
           </p>
         </div>
 
