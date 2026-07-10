@@ -4,6 +4,7 @@ import './index.css'
 
 import { router } from './router/Router.jsx';
 import {RouterProvider} from "react-router";
+import AuthProvider from './Contexts/AuthContext/AuthProvider.jsx';
 
 
 
@@ -11,9 +12,13 @@ import {RouterProvider} from "react-router";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <div className='font-urbanist'>
+    <AuthProvider>
+
+      <div className='font-urbanist'>
        <RouterProvider router={router} />,
     </div>
+    </AuthProvider>
+    
    
   </StrictMode>,
 )

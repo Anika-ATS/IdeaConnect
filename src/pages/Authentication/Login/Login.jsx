@@ -1,17 +1,35 @@
 import { useForm } from "react-hook-form";
-
+import useAuth from '../../../hooks/useAuth';
 const Login = () => {
+
+       
+
+
+
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
+  
+  const { createUser} = useAuth();
+
+  
 
   const selectedRole = watch("role");
 
   const onSubmit = (data) => {
     console.log("Login Data:", data);
+    console.log(createUser);
+
+    createUser(data.user,data.password)
+     .then(result => {
+        console.log(result.user);
+                                })
+    .catch(error => {
+                console.log(error)
+            })
 
     // 🔐 Replace with real authentication logic
     if (data.role === "student") {
@@ -77,6 +95,7 @@ const Login = () => {
                 pattern: {
                   value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                   message: "Enter a valid email address",
+                  
                 },
               })}
             />
@@ -98,6 +117,7 @@ const Login = () => {
                 required: "Password is required",
                 minLength: {
                   value: 6,
+                  maxLength:11,
                   message: "Password must be at least 6 characters",
                 },
               })}
